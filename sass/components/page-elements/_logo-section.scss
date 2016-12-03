@@ -1,0 +1,9 @@
+.logo-section {
+  p {
+    @include rem(font-size, 16px);
+    color: $white;
+  }
+  .about-us {
+    @include rem(margin-top, 20px);
+  }
+}

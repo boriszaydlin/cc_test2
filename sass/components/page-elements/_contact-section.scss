@@ -1,0 +1,39 @@
+.contact-section {
+  .field-label {
+    display: none;
+  }
+  .field-type-text,
+  .field-type-email {
+    @include rem(margin-top, 10px);
+    .field-item {
+      @include rem(font-size, 15px);
+    }
+  }
+  .field-type-email .field-item:before,
+  .field-type-text .field-item:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    display: inline-block;
+    font-size: inherit;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+  }
+  .field-type-text {
+    .field-item:before {
+      content: "\f095";
+    }
+  }
+  .field-type-email {
+    .field-item:before {
+      content: "\f003";
+    }
+  }
+}
+
+@media (min-width: 360px) {
+  .contact-section .field-type-email .field-item:before,
+  .contact-section .field-type-text .field-item:before {
+    @include rem(margin-right, 10px);
+  }
+}

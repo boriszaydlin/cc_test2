@@ -1,0 +1,80 @@
+.next-slide-section {
+  @include transform(translateX(-50%));
+  bottom: 3%;
+  left: 50%;
+  position: absolute;
+  z-index: 99;
+  a {
+    @include rem(height, 50px);
+    @include rem(width, 50px);
+    background: url('../images/icons/next-section.png') no-repeat;
+    background-size: contain;
+    display: block;
+    font-size: 0;
+  }
+}
+.slick-dots {
+  li {
+    @include rem(height, 12px);
+    @include rem(width, 12px);
+    @include border-radius(50%);
+    background: rgba($color-dark-gray, .5);
+    font-size: 0;
+    * {
+      font-size: 0;
+    }
+    &.slick-active {
+      background: $color-dark-gray;
+    }
+  }
+}
+.slick-prev,
+.slick-next {
+  &:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-size: inherit;
+    font: normal normal normal 30px/1 FontAwesome;
+    text-rendering: auto;
+    color: $color-dark-gray;
+  }
+}
+.slick-next {
+  &:before {
+    content: '\f054';
+  }
+}
+.slick-prev {
+  &:before {
+    content: '\f053';
+  }
+}
+@media (min-width: $small_device_width) {
+  .services-section .next-slide-section a,
+  .clients-section .next-slide-section a {
+    @include rem(height, 55px);
+    @include rem(width, 55px);
+    background: url('../images/icons/next-section-tab.png') no-repeat;
+    background-size: contain;
+  }
+  .next-slide-section a {
+    @include rem(height, 70px);
+    @include rem(width, 70px);
+  }
+}
+
+@media (min-width: $small_device_width) and (max-width: $mid_device_width) {
+  .slick-slide {
+    height: 90px !important;
+    div {
+      height: 100%;
+    }
+    img {
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.clients-section {
+  .views-row {
+    @include rem(padding, 0 5px);
+    @include rem(margin, 20px 0);
+  }
+}

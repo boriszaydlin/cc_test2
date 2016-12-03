@@ -1,0 +1,6 @@
+.form-group {
+  @include rem(margin-bottom, 10px);
+}
+.field-label-inline .field-items {
+  float: none;
+}

@@ -1,0 +1,44 @@
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+@mixin rems($property, $values, $base:"") {
+  $px: ();
+  $rem: ();
+  $ratio: 1;
+  @if $property == "font-size" {
+    $ratio: 1.15;
+  }
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+      @if $unit == "px" {
+        $px: append($px, $value);
+        @if $base != "" {
+          $rem: append($rem, ($val * (100 / $base) * $ratio + rem));
+        }
+        @else {
+          $rem: append($rem, ($val * (100 / 375) * $ratio + rem));
+        }
+      }
+      @if $unit == "rem" {
+        @if $base != "" {
+          $px: append($px, ($val / (100 / $base) * $ratio + px));
+        }
+       @else {
+          $px: append($px, ($val / (100 / 375) * $ratio + px));
+        }
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}

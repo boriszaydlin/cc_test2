@@ -1,0 +1,16 @@
+/* color */
+$white: #fff;
+$black: #000;
+
+$color-gray: #404042;
+$color-light-gray: #f1f2f2;
+$color-simple-gray: #cccccc;
+$color-dark-gray: #5e6b6e;
+$color-pink: #d83454;
+
+
+// Fonts
+@include font('museosans', museosans500);
+@include font('Museo Sans W01 Rounded 300', MuseoSansRounded300);
+$main-font: 'museosans', sans-serif;
+$museoR3: 'Museo Sans W01 Rounded 300';

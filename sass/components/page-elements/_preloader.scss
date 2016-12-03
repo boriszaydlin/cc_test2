@@ -1,0 +1,69 @@
+div.m-loading {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9000;
+  .loading-backdrop {
+    background-color: #252b33;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 550;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Open Sans",open-sans,sans-serif;
+    font-weight: 400;
+    .loading-container {
+      position: absolute;
+      top: 50%;
+      margin: -220px 0 0;
+      width: 100%;
+      @media (max-height: 570px) {
+        position: relative;
+        margin: 40px 0 0;
+        top: 0;
+      }
+    }
+    .loading-container .status-container {
+      height: 258px;
+      width: 258px;
+      z-index: 501;
+      background-image: url('../images/icons/share-loading-sprites.png');
+      margin: 0 auto;
+      background-position: 1px 1px;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+    .loading-container .status-container .status {
+      background: url('../images/icons/share-loading-sprites.png') 258px 258px no-repeat;
+      height: 258px;
+      width: 258px;
+      z-index: 510;
+    }
+    .loading-container .status-container .logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 520;
+      width: 69px;
+      height: 56px;
+      background-image: url('../images/icons/share-loading-sprites.png');
+      background-position: 0 -459px;
+      margin: -28px 0 0 -34px;
+    }
+    h2 {
+      font-size: 25px;
+      font-weight: 300;
+      color: #fff;
+      margin: 41px 0 11px;
+    }
+  }
+}
+
