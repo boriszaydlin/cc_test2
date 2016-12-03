@@ -37,3 +37,23 @@
     @include rem(margin-right, 10px);
   }
 }
+@media (min-width: $desc_width) {
+  .contact-section {
+    .field-label {
+      display: inline-block;
+      float: none;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    .field-type-text {
+      .field-items {
+        display: inline-block;
+        font-size: 20px;
+      }
+    }
+    .field-type-text .field-item:before,
+    .field-type-email {
+      display: none;
+    }
+  }
+}

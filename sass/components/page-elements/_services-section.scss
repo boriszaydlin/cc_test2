@@ -51,3 +51,22 @@
     }
   }
 }
+
+@media (min-width: $desc_width) {
+  .services-section {
+    .views-field-name,
+    .views-field-field-services-image {
+      float: none;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+    .field-content {
+      margin: 0 auto;
+    }
+    .views-field-name .field-content {
+      font-size: 20px;
+      white-space: normal;
+    }
+  }
+}

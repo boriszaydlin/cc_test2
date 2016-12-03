@@ -15,7 +15,7 @@ regions[content]        = 'Content'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = dist/main.css
+stylesheets[all][] = dist/main.min.css
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -38,4 +38,4 @@ scripts[] = 'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transi
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''
 
-scripts[] = dist/main.js
+scripts[] = dist/main.min.js

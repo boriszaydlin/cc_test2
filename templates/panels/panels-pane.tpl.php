@@ -41,7 +41,7 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
     <div class="row">
-      <div class="col-xs-8 col-xs-push-2">
+      <div class="col-xs-8 col-lg-12  col-lg-push-0 col-xs-push-2">
         <?php print render($content); ?>
       </div>
     </div>

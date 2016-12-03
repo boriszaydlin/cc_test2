@@ -85,17 +85,23 @@ input[type="search"],
 input[type="tel"],
 input[type="url"] {
   @include border-radius(4px);
-  border-width: 2px;
+  @include rem(max-width, 400px);
+  background-color: $white;
   border-color: $color-simple-gray;
   border-style: solid;
-  background-color: $white;
+  border-width: 2px;
   color: $color-gray;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input[type="submit"],
-button {
+button:not(.slick-arrow),
+button.btn:not(.slick-arrow) {
   @include main-btn;
-  &.btn {
+  &:hover,
+  &:active,
+  &:focus {
     @include main-btn;
   }
 }

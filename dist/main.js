@@ -2915,9 +2915,6 @@
         }
       };
       $('.fullpage .inside', context).fullpage(fullpageSettings.main);
-      if ($('.fp-tableCell').length) {
-        $.fn.fullpage.moveTo(6);
-      }
       // Custom Arrows Navigation
       this.arrowsInit('.slide-section', '.next-slide-section a', context);
     },

@@ -11935,65 +11935,83 @@ input[type="url"] {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  border-width: 2px;
+  max-width: 400px;
+  max-width: 25rem;
+  background-color: #fff;
   border-color: #cccccc;
   border-style: solid;
-  background-color: #fff;
-  color: #404042; }
-
-/* line 95, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
-input[type="submit"],
-button {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
-  padding-top: 10px;
-  padding-top: 0.625rem;
-  padding-bottom: 10px;
-  padding-bottom: 0.625rem;
-  background-color: #d83454;
-  color: #fff;
-  display: block;
-  width: 100%; }
+  border-width: 2px;
+  color: #404042;
+  margin-left: auto;
+  margin-right: auto; }
 
 /* line 98, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
-input[type="submit"].btn,
-button.btn {
+input[type="submit"],
+button:not(.slick-arrow),
+button.btn:not(.slick-arrow) {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  padding-top: 10px;
-  padding-top: 0.625rem;
+  max-width: 400px;
+  max-width: 25rem;
   padding-bottom: 10px;
   padding-bottom: 0.625rem;
+  padding-top: 10px;
+  padding-top: 0.625rem;
   background-color: #d83454;
   color: #fff;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%; }
 
-/* line 103, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+/* line 102, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus,
+button:not(.slick-arrow):hover,
+button:not(.slick-arrow):active,
+button:not(.slick-arrow):focus,
+button.btn:not(.slick-arrow):hover,
+button.btn:not(.slick-arrow):active,
+button.btn:not(.slick-arrow):focus {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  max-width: 400px;
+  max-width: 25rem;
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
+  padding-top: 10px;
+  padding-top: 0.625rem;
+  background-color: #d83454;
+  color: #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+/* line 109, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
 textarea {
   resize: none; }
 
-/* line 107, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+/* line 113, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
 .webform-component-textarea .grippie {
   display: none; }
 
-/* line 110, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+/* line 116, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
 .clearfix:after {
   clear: both;
   content: '';
   display: block; }
 
-/* line 115, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+/* line 121, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
 #admin-menu a {
   font-size: 12px;
   font-size: 0.75rem; }
 
 @media (min-width: 768px) {
-  /* line 120, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
+  /* line 126, /var/www/cc_test2/bootstrap_subtheme/sass/base/_base.scss */
   img {
     max-width: 100%; } }
 
@@ -12002,7 +12020,12 @@ textarea {
   padding: 0 5px;
   padding: 0 0.3125rem;
   margin: 20px 0;
-  margin: 1.25rem 0; }
+  margin: 1.25rem 0;
+  outline: none; }
+
+/* line 6, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_clients-section.scss */
+.clients-section .views-row * {
+  outline: none; }
 
 /* line 2, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_contact-section.scss */
 .contact-section .field-label {
@@ -12045,6 +12068,22 @@ textarea {
   .contact-section .field-type-text .field-item:before {
     margin-right: 10px;
     margin-right: 0.625rem; } }
+
+@media (min-width: 1200px) {
+  /* line 42, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_contact-section.scss */
+  .contact-section .field-label {
+    display: inline-block;
+    float: none;
+    font-weight: 400;
+    font-size: 20px; }
+  /* line 49, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_contact-section.scss */
+  .contact-section .field-type-text .field-items {
+    display: inline-block;
+    font-size: 20px; }
+  /* line 54, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_contact-section.scss */
+  .contact-section .field-type-text .field-item:before,
+  .contact-section .field-type-email {
+    display: none; } }
 
 /* line 1, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_form.scss */
 .form-group {
@@ -12217,6 +12256,22 @@ div.m-loading .loading-backdrop h2 {
   .services-section .views-field-name .field-content {
     font-size: 28px;
     font-size: 1.75rem; } }
+
+@media (min-width: 1200px) {
+  /* line 57, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_services-section.scss */
+  .services-section .views-field-name,
+  .services-section .views-field-field-services-image {
+    float: none;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%; }
+  /* line 64, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_services-section.scss */
+  .services-section .field-content {
+    margin: 0 auto; }
+  /* line 67, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_services-section.scss */
+  .services-section .views-field-name .field-content {
+    font-size: 20px;
+    white-space: normal; } }
 
 /* line 1, /var/www/cc_test2/bootstrap_subtheme/sass/components/page-elements/_slide-configs.scss */
 .next-slide-section {
