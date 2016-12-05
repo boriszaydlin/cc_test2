@@ -124,6 +124,12 @@ textarea {
 
 @media (min-width: $mid_device_width) {
   img {
-    max-width: 100%;
+    max-width: 60%;
+  }
+}
+
+@media (min-width: $mid_width) {
+  img {
+    max-width: 75%;
   }
 }

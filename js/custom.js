@@ -1,4 +1,16 @@
 (function($) {
+  Drupal.behaviors.preloader = {
+    attach: function (context, settings) {
+      window.onload=function(){
+        $('.m-loading').remove();
+      };
+      setTimeout(function(){
+        if ($('.m-loading').length) {
+          $('.m-loading').remove();
+        }
+      }, 3000);
+    }
+  };
   Drupal.behaviors.fullpageJs = {
     attach: function (context, settings) {
       var fullpageSettings = {
@@ -8,7 +20,19 @@
           sectionsColor : ['#d83454', '#f1f2f2', '#f1f2f2', '#f1f2f2', '#ffffff', '#f1f2f2', '#f1f2f2', '#f1f2f2'],
           verticalCentered: true,
           slidesNavigation: true,
-          normalScrollElements: '.gmap-gmap, .slick-slider'
+          normalScrollElements: '.gmap-gmap, .slick-slider',
+          onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+            $('.next-slide-section a').removeClass();
+            $('.next-slide-section a').addClass('active-section-' + nextIndex);
+          },
+          afterLoad: function(anchorLink, index){
+            var loadedSection = $(this);
+            if(loadedSection.hasClass('slide-section-last')){
+                $('.next-slide-section a').removeClass();
+                $('.next-slide-section a').addClass('last-section-is-active');
+            }
+          }
         }
       };
       $('.fullpage .inside', context).fullpage(fullpageSettings.main);
@@ -17,16 +41,14 @@
     },
     createArrows: function (el, context) {
       var sectionsCount = $(el, context).length;
-      for (var i = 0; i < sectionsCount; i++) {
-        $('.slide-section-'+ i).append('<div class="next-slide-section"><a href="#" data-target=' + i +'>NEXT</a></div>');
-      }
+      $('.main-panel-wrapper', context).after('<div class="next-slide-section"><a href="#">NEXT</a></div>');
     },
     arrowsInit: function(el, arrow, context) {
       this.createArrows(el, context);
       $(arrow, context).click(function(e) {
         e.preventDefault();
-        var currentId = $(this, context).attr('data-target');
-        currentId++;
+        var currentId = $('.slide-section.active', context).index();
+        currentId += 2;
         $.fn.fullpage.moveTo(currentId);
         return false;
       });
@@ -62,18 +84,6 @@
         },
       };
       $('.view-view-clients .view-content').slick(carouselSettings.clients);
-    }
-  };
-  Drupal.behaviors.preloader = {
-    attach: function (context, settings) {
-      window.onload=function(){
-        $('.m-loading').remove();
-      };
-      setTimeout(function(){
-        if ($('.m-loading').length) {
-          $('.m-loading').remove();
-        }
-      }, 3000);
     }
   };
   Drupal.behaviors.gmapSettings = {
